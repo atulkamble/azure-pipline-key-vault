@@ -1,10 +1,8 @@
+```
 cryptography - 
 
 plain text >> cipher text - encryption 
 cipher text >> plain text >> decryption 
-
-
-
 
 azure key vault 
 
@@ -16,13 +14,6 @@ azure key vault
 website - certificates
 
 code >> git (version control)
-
-
-
-
-
-
-
 
 // Key Vault Creation
 
@@ -80,23 +71,5 @@ az role assignment list \
   -o table
 
 9. build and run pipeline 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

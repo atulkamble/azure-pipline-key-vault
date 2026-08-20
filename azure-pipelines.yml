@@ -20,6 +20,6 @@ steps:
   - script: |
       echo "Secret fetched successfully"
       echo "Using secret in the application..."
-    displayName: "Use Key Vault Secret"
+    displayName: "Use Key Vault Secrets"
     env:
       DB_PASSWORD: $(dbpass)

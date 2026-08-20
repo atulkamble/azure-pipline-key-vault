@@ -1,1 +1,25 @@
+trigger:
+  - main
 
+pool:
+  vmImage: "ubuntu-latest"
+
+variables:
+  keyvault: "myvalut68698"
+  secretName: "dbpass"
+
+steps:
+  - task: AzureKeyVault@2
+    displayName: "Fetch Secret from Azure Key Vault"
+    inputs:
+      azureSubscription: "keyvaultconnection"
+      KeyVaultName: "$(keyvault)"
+      SecretsFilter: "$(secretName)"
+      RunAsPreJob: false
+
+  - script: |
+      echo "Secret fetched successfully"
+      echo "Using secret in the application..."
+    displayName: "Use Key Vault Secret"
+    env:
+      DB_PASSWORD: $(dbpass)
